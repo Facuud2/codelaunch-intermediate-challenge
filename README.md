@@ -1,69 +1,98 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# CodeLaunch Intermediate Challenge
 
-Currently, two official plugins are available:
+Proyecto web desarrollado en React + TypeScript, orientado a la gestión de tareas (ToDo App) con una interfaz moderna, profesional y amigable. Incluye autenticación simulada, formulario de contacto y notificaciones visuales. Ideal para equipos que buscan una base sólida, escalable y con buenas prácticas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> *IMPORTANTE*: La paleta de colores fue diseñado usando GitHub Copilot. El diseño fue pensado y realizado por Facundo.
 
-## Expanding the ESLint configuration
+## 🚀 Características principales
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Gestión de tareas:**
+	- Crear, editar, eliminar y marcar tareas como completadas o pendientes.
+	- Visualización clara y moderna de la lista de tareas.
+	- Validaciones y feedback visual inmediato.
+- **Autenticación de usuario (simulada):**
+	- Formulario de login atractivo, profesional y amigable.
+	- Manejo de errores y mensajes de éxito.
+- **Formulario de contacto:**
+	- Permite a los usuarios enviar mensajes o sugerencias.
+	- Feedback visual para errores y envíos exitosos.
+- **Notificaciones:**
+	- Uso de `react-toastify` para mostrar mensajes de éxito, error e información.
+- **UI/UX:**
+	- Diseño responsive y moderno con TailwindCSS.
+	- Componentes reutilizables y código limpio.
+- **Estado global:**
+	- Manejo de estado con Zustand para tareas y acciones globales.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tecnologías utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Router DOM](https://reactrouter.com/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Estructura del proyecto
+
+```
+src/
+	assets/           # Imágenes y recursos estáticos
+	components/       # Componentes reutilizables (ToDoList, ToDoForm, Header, etc.)
+	layout/           # Componentes de layout y estructura
+	types/            # Tipos y modelos TypeScript
+	views/            # Vistas principales (Home, Login, ContactUs)
+	store.ts          # Estado global con Zustand
+	router.tsx        # Definición de rutas con React Router
+	main.tsx          # Entry point de la app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📋 Scripts disponibles
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `npm run dev`     - Inicia el servidor de desarrollo
+- `npm run build`   - Compila la aplicación para producción
+- `npm run preview` - Previsualiza la build de producción
+- `npm run lint`    - Ejecuta ESLint para análisis de código
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ⚡ Instalación y uso
+
+1. Clona el repositorio:
+	 ```bash
+	 git clone <url-del-repo>
+	 cd codelaunch-intermediate-challenge
+	 ```
+2. Instala las dependencias:
+	 ```bash
+	 npm install
+	 ```
+3. Inicia el servidor de desarrollo:
+	 ```bash
+	 npm run dev
+	 ```
+4. Accede a la app en [http://localhost:5173](http://localhost:5173) (o el puerto que indique Vite).
+
+## 🧩 Componentes principales
+
+- **Home:** Vista principal con la lista y formulario de tareas.
+- **Login:** Formulario de autenticación con feedback visual.
+- **ContactUs:** Formulario de contacto para sugerencias o dudas.
+- **ToDoList / ToDoForm:** Gestión y edición de tareas.
+- **Header, Layout, BackToHome:** Navegación y estructura general.
+
+## 📝 Notas técnicas
+
+- El login es simulado (usuario: `user@example.com`, contraseña: `password123`).
+- El estado de las tareas se almacena en memoria (no persistente en backend).
+- El diseño es completamente responsive y accesible.
+- Se siguen buenas prácticas de desarrollo, tipado estricto y componentes desacoplados.
+
+## 👥 Autores y créditos
+
+- Desarrollador principal: [Facuud2](https://github.com/Facuud2)
+- Colaboradores: Yamiluu
+
+---
+¡Listo para presentar y escalar en equipo! Si tienes dudas o sugerencias, utiliza el formulario de contacto dentro de la app.
